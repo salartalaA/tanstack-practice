@@ -6,8 +6,8 @@ export function useTodosInfinite() {
     queryKey: ["todos"],
     queryFn: fetchTodos,
     getNextPageParam: (lastPage, allPages) => {
-      // stop when last page has fewer than 5 items
-      return lastPage.length === 5 ? allPages.length + 1 : undefined;
+      // stop when last page has fewer than 20 items
+      return lastPage.length === 20 ? allPages.length + 1 : undefined;
     },
     staleTime: 1000 * 60, // 1 minute cache
   });
